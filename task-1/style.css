@@ -1,0 +1,35 @@
+body {
+  background: rgb(179, 179, 179);
+}
+table {
+  margin: 25px auto;
+  border-collapse: collapse;
+  width: 400px;
+}
+tr {
+  height: 40px;
+}
+td {
+  width: 25px;
+  background: white;
+  border: 5px solid #000;
+}
+
+.transparent,
+tr:first-child td {
+  background: transparent;
+  border: none;
+}
+
+.red {
+  background: #ff5b2d;
+}
+.yellow {
+  background: #fffa69;
+}
+.black {
+  background: black;
+}
+.blue {
+  background: #074481;
+}
