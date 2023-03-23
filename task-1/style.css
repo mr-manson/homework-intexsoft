@@ -14,22 +14,23 @@ td {
   background: white;
   border: 5px solid #000;
 }
-
+.narrow {
+  height: 30px;
+}
 .transparent,
 tr:first-child td {
   background: transparent;
   border: none;
 }
-
-.red {
+.redcell {
   background: #ff5b2d;
 }
-.yellow {
+.yellowcell {
   background: #fffa69;
 }
-.black {
+.blackcell {
   background: black;
 }
-.blue {
+.bluecell {
   background: #074481;
 }
