@@ -1,0 +1,36 @@
+body {
+  background: rgb(179, 179, 179);
+}
+table {
+  margin: 25px auto;
+  border-collapse: collapse;
+  width: 400px;
+}
+tr {
+  height: 40px;
+}
+td {
+  width: 25px;
+  background: white;
+  border: 5px solid #000;
+}
+.narrow {
+  height: 30px;
+}
+.transparent,
+tr:first-child td {
+  background: transparent;
+  border: none;
+}
+.redcell {
+  background: #ff5b2d;
+}
+.yellowcell {
+  background: #fffa69;
+}
+.blackcell {
+  background: black;
+}
+.bluecell {
+  background: #074481;
+}
