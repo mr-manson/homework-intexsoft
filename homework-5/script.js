@@ -8,7 +8,7 @@ let summ = function (a, b) {
 };
 
 let less = function (a, b) {
-  return a <= 10;
+  return a <= 100;
 };
 
 let isNumber = function (a) {
@@ -37,22 +37,24 @@ let customEvery = function (arr, func) {
 
 // ===CUSTOM=ARRAY.PROTOTYPE==========
 Array.prototype.customEvery = function (func) {
+  let res = true;
   if (!Array.isArray(this)) {
-    throw Error(`${this} isn't an array`);
+    res = `${this} isn't an array`;
   }
   if (this.length === 0) {
-    return true;
+    return res;
   } else {
-    let res = 0;
     for (let i = 0; i < this.length; i++) {
       res = func(this[i], i, this);
-      console.log(res);
+      // console.log(res);
+      if (res) break;
     }
+    return res;
   }
 };
 
 // arr.customEvery(summ);
-// arr.customEvery(less);
+console.log(arr.customEvery(less));
 // arr.customEvery(isNumber);
 // console.log(empty.customEvery(less));
 
