@@ -9,6 +9,7 @@ let less = function (a) {
   return a <= 10;
 };
 
+// ====ARRAY.EVERY====================
 let res = arr.every((element, index, arr) => {
   return element + index <= 10;
 });
@@ -17,16 +18,18 @@ let res1 = arr.every(summ);
 
 // console.log(res1);
 
-// let newEvery = function (arr, func) {
-//   let res = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     res = func(arr[i], i);
-//     console.log(res);
-//   }
-// };
+// ===CUSTOM=FUNCTION=================
+let newEvery = function (arr, func) {
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) {
+    res = func(arr[i], i);
+    console.log(res);
+  }
+};
 
 // newEvery(arr, summ);
 
+// ===CUSTOM=ARRAY.PROTOTYPE==========
 Array.prototype.customEvery = function (func) {
   let res = 0;
   for (let i = 0; i < this.length; i++) {
