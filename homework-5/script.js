@@ -2,7 +2,7 @@ let arr = [1, 2, 3, 4, 50];
 let notArray = 1;
 let empty = [];
 
-// ====CECK=FUNCTIONS=================
+// ====CHECK=FUNCTIONS================
 let summ = function (a, b) {
   return a + b;
 };
@@ -12,7 +12,7 @@ let less = function (a, b) {
 };
 
 let isNumber = function (a) {
-  return typeof a === Number;
+  return typeof a === "number";
 };
 
 // ====ARRAY.EVERY====================
@@ -35,7 +35,7 @@ let customEvery = function (arr, func) {
 
 // customEvery(arr, summ);
 
-// ===CUSTOM=ARRAY.PROTOTYPE==========
+// ===CUSTOM=ARRAY.PROTOTYPE====================================================
 Array.prototype.customEvery = function (func) {
   let res = true;
   if (!Array.isArray(this)) {
@@ -47,16 +47,19 @@ Array.prototype.customEvery = function (func) {
     for (let i = 0; i < this.length; i++) {
       res = func(this[i], i, this);
       // console.log(res);
-      if (res) break;
+      if (res === false) break;
     }
     return res;
   }
 };
+// ===CUSTOM=ARRAY.PROTOTYPE====================================================
 
 // arr.customEvery(summ);
-console.log(arr.customEvery(less));
-// arr.customEvery(isNumber);
+// console.log(arr.customEvery(less));
+console.log(arr.customEvery(isNumber));
 // console.log(empty.customEvery(less));
+
+// console.log(isNumber(1));
 
 // console.log(notArray.customEvery(summ));
 
