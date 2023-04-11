@@ -1,3 +1,5 @@
+"use strict";
+
 var arr = [1, 2, 3, 4, 50];
 var notArray = 1;
 var empty = [];
