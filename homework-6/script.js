@@ -1,87 +1,40 @@
 "use strict";
 
-let data = [
-  {
-    _id: "64367e90de130511bfbf66a2",
-    age: 21,
-    friends: [
-      {
-        _id: "64367e90efcc3e933cbe6fb1",
-        age: 37,
-        friends: [
-          {
-            _id: "64367e90efcc3e933cbe6fb1",
-            age: 20,
-            friends: [
-              {
-                _id: "64367e90efcc3e933cbe6fb1",
-                age: 20,
-                friends: [
-                  {
-                    _id: "64367e90efcc3e933cbe6fb1",
-                    age: 20,
-                  },
-                ],
-              },
-              {
-                _id: "64367e90efcc3e933cbe6fb1",
-                age: 10,
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: "55555555555555555",
-    age: 25,
-    friends: [
-      {
-        _id: "64367e90efcc3e933cbe6fb1",
-        age: 20,
-      },
-    ],
-  },
-  {
-    _id: "55555555555555555",
-    age: 30,
-    friends: [
-      {
-        _id: "64367e90efcc3e933cbe6fb1",
-        age: 20,
-        friends: [
-          {
-            _id: "64367e90efcc3e933cbe6fb1",
-            age: 20,
-          },
-        ],
-      },
-    ],
-  },
-];
+function loadJSON(callback) {
+  var XMLObj = new XMLHttpRequest();
+  XMLObj.open("GET", "data.json", true);
+  XMLObj.onreadystatechange = function () {
+    if (XMLObj.readyState === 4 && XMLObj.status === 200) {
+      var myArr = JSON.parse(this.responseText);
+      callback(myArr);
+    }
+  };
+  XMLObj.send();
+}
 
-let totalAge = 0;
-let totalFriends = 0;
+loadJSON(function (arr) {
+  // console.log(arr);
+  // Данные получены.
 
-function haveFriends(obj) {
-  if (obj.age) {
-    totalAge += obj.age;
-    totalFriends++;
-  }
-  if (!obj.friends) {
-    return;
-  } else {
-    for (let key of obj.friends) {
-      haveFriends(key);
+  let totalAge = 0;
+  let totalFriends = 0;
+
+  function haveFriends(obj) {
+    if (obj.age) {
+      totalAge += obj.age;
+      totalFriends++;
+    }
+    if (!obj.friends) {
+      return;
+    } else {
+      for (let key of obj.friends) {
+        haveFriends(key);
+      }
     }
   }
-}
 
-//==ПЕРЕБОР=МАССИВА==============================================================
-for (let pers of data) {
-  haveFriends(pers);
-}
-console.log(totalAge / totalFriends);
-
-//===============================================================================
+  for (let pers of arr) {
+    haveFriends(pers);
+  }
+  console.log(totalAge / totalFriends);
+});
