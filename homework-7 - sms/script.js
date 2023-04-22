@@ -37,7 +37,7 @@ const getSMS = (arr, it = 1, itEndSize = 1) => {
   let iterationEndSize = itEndSize;
 
   if (!arr.length) {
-    totalIterationCount = iteration - 1;
+    totalIterationCount = --iteration;
     return { result: arr };
   }
 
