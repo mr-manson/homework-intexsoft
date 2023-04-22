@@ -11,7 +11,7 @@ addEventListener("DOMContentLoaded", function () {
 
 let splitText = "";
 let result = [];
-const initIter = 1;
+let initIter = 1;
 
 const getAllSMS = (inputText) => {
   if (!inputText || typeof inputText !== "string") return [];
@@ -31,15 +31,13 @@ const getAllSMS = (inputText) => {
 };
 
 let totalIterationCount = 0;
-let iteration = 0;
-let iterationEndSize = 0;
 
 const getSMS = (arr, it = 1, itEndSize = 1) => {
-  iteration = it;
-  iterationEndSize = itEndSize;
+  let iteration = it;
+  let iterationEndSize = itEndSize;
 
   if (!arr.length) {
-    totalIterationCount = iteration--;
+    totalIterationCount = iteration - 1;
     return { result: arr };
   }
 
