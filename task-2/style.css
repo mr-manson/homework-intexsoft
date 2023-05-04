@@ -1,0 +1,52 @@
+.container {
+  width: 50vw;
+  margin: 25px;
+}
+h1 {
+  text-align: right;
+  color: orange;
+  font-weight: 600;
+}
+.text p span {
+  color: white;
+  font-weight: 600;
+  background-color: rgb(1, 134, 1);
+  font-style: italic;
+}
+.text p::first-letter {
+  color: red;
+  font-weight: 600;
+  font-size: 2em;
+}
+.list h3 {
+  font-size: 2em;
+}
+.list h3:first-of-type {
+  color: orange;
+}
+.list h3:last-of-type {
+  color: blue;
+}
+.title {
+  font-weight: 600;
+}
+.list ul li:first-child ol {
+  font-weight: 400;
+  color: grey;
+}
+.list ul li:last-child ol {
+  font-weight: 400;
+  color: red;
+}
+table {
+  width: 400px;
+}
+
+td:first-child {
+  color: orange;
+}
+td:not(:first-child) {
+  color: #fff;
+  background-color: rgb(1, 134, 1);
+  text-align: center;
+}
